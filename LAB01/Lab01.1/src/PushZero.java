@@ -6,48 +6,57 @@ import java.util.Scanner;
 
 public class PushZero
 {
-    static void pushZerosToBeginning(int arr[], int n)
+    static void pushZerosToBeginning(int arr[], int n)  // funkcijata prima niza od broevi i dolzinata na nizata
     {
+        int pom;
+        for(int i=0; i <n;i++){
+            pom = arr[i];
 
-        int count = n - 1; // Initialize a count variable to keep track of zeros
+            if(pom==0){
 
-        // Iterate through the array in reverse order
-        for (int i = n - 1; i >= 0; i--) {
-            if (arr[i] != 0) {
-                // If the current element is non-zero, move it to the end of the array
-                arr[count] = arr[i];
-                count--;
             }
         }
 
-        // Fill the beginning elements with zeros
-        while (count >= 0) {
-            arr[count] = 0;
-            count--;
+
+        for(int i=0; i <n;i++) {
+            System.out.print(arr[i]);
         }
 
 
+    /*
+    Ova mi beshe incijalnata idea, no potrebno e kako ke se pomesti nulata, site clenovi od nizata ponataka da se pomestat
+    nemoze da se menjaat nulite so clenovite vo nizata
+        int pom,j=0,pom2;
 
-        System.out.println("Transformiranata niza e:");
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
+        for(int i=0; i <n;i++){
+            pom = arr[i];
+
+            if(pom==0){
+                pom2=arr[j];
+                arr[j]=arr[i];
+                arr[i]=pom2;
+                j++;
+            }
         }
+     */
+
     }
 
     public static void main (String[] args)
     {
         int b;
-        Scanner scanner = new Scanner(System.in);
-        b= scanner.nextInt();
+        Scanner scanner = new Scanner(System.in); // skener za JAVA programi
+        b= scanner.nextInt();   // kolku clena ke ima nizata
 
-        int arr[]=new int [b];
+        int arr[]=new int [b]; // inicijalizacija na nizata, taa ke ima 'b' memoriski mesta
 
         for(int i = 0 ; i<b;i++)
         {
-            arr[i]=scanner.nextInt();
+            arr[i]=scanner.nextInt(); // vnesuvanje an sekoj clen od nizata
         }
 
-        pushZerosToBeginning(arr,b);
+        pushZerosToBeginning(arr,b); // povikuvanje na funkcijata sho ke ja ispecati nizata taka shto site 0 ke bidat an pocetok an nizata
+
 
     }
 }
